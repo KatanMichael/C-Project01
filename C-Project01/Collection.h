@@ -1,10 +1,3 @@
-#pragma once
-#ifdef Collection_h
-#define Collection_h
-
-
-
-
 
 #include "Circle.h"
 #include "Point.h"
@@ -21,4 +14,3 @@ private:
 	Circle **circles;
 };
 
-#endif 
