@@ -3,7 +3,8 @@
 #define Circle_h
 
 #include "Point.h"
-
+#include <iostream>
+using namespace std;
 
 class Circle
 {
@@ -15,7 +16,7 @@ public:
 	void print() const;
 private:
 	const Point center;
-	int radius, color;
+	int radius, color;	
 };
 
 #endif //Circle_h
