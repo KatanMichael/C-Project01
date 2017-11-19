@@ -9,17 +9,16 @@ Collection::Collection(int radius, int width, int height, int color)
 	int i = 0, j = 0;
 
 	circles = new Circle*[width*height];
-	for (; i < width; i++)
+	for (; i < height; i++)
 	{
-		for (j = 0; j < height; j++)
+		for (j = 0; j < width; j++)
 		{
-			circles[count] = new Circle(radius * 2 * i, radius * 2 * j, radius, color);
+			circles[count] = new Circle(radius * 2 * j, radius * 2 * i, radius, color);
 			count++;
 		}
 		
 	}
 
-//	cout << "There Are " << count << " Circles in the collaction." << endl;
 		
 }
 
