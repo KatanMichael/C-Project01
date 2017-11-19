@@ -9,11 +9,14 @@ Collection::Collection(int radius, int width, int height, int color)
 	int i = 0, j = 0;
 
 	circles = new Circle*[width*height];
-	for (; c < width*height; c++)
+	for (; i < width; i++)
 	{
-		circles[c] = new Circle(radius * 2 * i, radius * 2 * j, radius, color);
-	//	cout << "I: " << i << " J: " << j << " I+J: " << i + j << endl;
-		count++;
+		for (j = 0; j < height; j++)
+		{
+			circles[count] = new Circle(radius * 2 * i, radius * 2 * j, radius, color);
+			count++;
+		}
+		
 	}
 
 //	cout << "There Are " << count << " Circles in the collaction." << endl;
@@ -27,8 +30,15 @@ Collection::~Collection()
 
 Circle & Collection::getCircleAt(const Point & p)
 {
-	// TODO: insert return statement here
-	return *circles[0];
+	int i = 0;
+	for (; i < count - 1; i++)
+	{
+		if ((circles[i]->contains(p)) == true)
+		{
+			return *circles[i];
+		}
+	}
+
 }
 
 void Collection::print() const
