@@ -48,7 +48,7 @@ bool Circle::contains(const Point & p) const
 	x = pow((double)x, 2.0);
 	y= pow((double)y, 2.0);
 
-	d = sqrt(x + y);
+	d = sqrt((double)x + (double)y);
 
 	if (d > radius)
 	{
@@ -66,5 +66,5 @@ bool Circle::contains(const Point & p) const
 void Circle::print() const
 {
 	cout << "Circle center=(" << center.getX() << "," << center.getY() << ") radius=" << this->radius
-		<< "color=" << this->color << endl;
+		<< " color=" << this->color << endl;
 }
