@@ -65,7 +65,6 @@ bool Circle::contains(const Point & p) const
 
 void Circle::print() const
 {
-	cout << "The Circle Center is in: " << center.getX() << "," << center.getY() << ", With Radios Of: " << radius
-		
-		 << ", His Color (Number) Is: "<< color << endl;
+	cout << "Circle center=(" << center.getX() << "," << center.getY() << ") radius=" << this->radius
+		<< "color=" << this->color << endl;
 }
