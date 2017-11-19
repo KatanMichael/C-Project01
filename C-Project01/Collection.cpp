@@ -3,7 +3,20 @@
 
 Collection::Collection(int radius, int width, int height, int color)
 {
-	//TODO Collection Conscrator
+	int x = width * height;
+	int c = 0;
+	int i = 0, j = 0;
+
+	circles = new Circle*[height];
+	for (; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			circles[i][j].print();
+			
+		}
+	}
+		
 }
 
 Collection::~Collection()

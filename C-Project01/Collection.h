@@ -5,6 +5,7 @@
 class Collection
 {
 public:
+	
 	Collection(int radius, int width, int height, int color);
 	~Collection();
 	Circle& getCircleAt(const Point &p);

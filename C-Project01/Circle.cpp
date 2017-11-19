@@ -2,6 +2,8 @@
 #include "Circle.h"
 #include <math.h>
 
+
+
 Circle::Circle(int x, int y, int r, int color) : center(x,y)
 {
 	this->color = color;
