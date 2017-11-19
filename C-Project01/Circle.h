@@ -9,7 +9,7 @@ using namespace std;
 class Circle
 {
 public:
-
+	
 	Circle(int x, int y, int r, int color);
 	int getColor() const;
 	void setColor(int color);

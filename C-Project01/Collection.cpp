@@ -7,12 +7,11 @@ Collection::Collection(int radius, int width, int height, int color)
 	int c = 0;
 	int i = 0, j = 0;
 
-	circles = new Circle*[height];
+	circles = new Circle*[width*height];
 	for (; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
 		{
-			circles[i][j].print();
 			
 		}
 	}
