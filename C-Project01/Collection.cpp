@@ -8,6 +8,21 @@ Collection::Collection(int radius, int width, int height, int color)
 	int c = 0;
 	int i = 0, j = 0;
 
+	if (radius <= 0)
+	{
+		radius = 1;
+	}
+
+	if (width <= 0)
+	{
+		width = 1;
+	}
+
+	if (height <= 0)
+	{
+		height = 1;
+	}
+
 	circles = new Circle*[width*height];
 	for (; i < height; i++)
 	{
@@ -24,7 +39,11 @@ Collection::Collection(int radius, int width, int height, int color)
 
 Collection::~Collection()
 {
-
+	for (int i = 0; i<count; i++)
+	{
+		delete circles[i];
+	}
+	delete circles;
 }
 
 Circle & Collection::getCircleAt(const Point & p)
