@@ -1,4 +1,3 @@
-#pragma once 
 #ifndef Circle_h
 #define Circle_h
 
