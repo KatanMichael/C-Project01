@@ -4,9 +4,6 @@
 Collection::Collection(int radius, int width, int height, int color)
 {
 	this->count = 0;
-	int x = width * height;
-	int c = 0;
-	int i = 0, j = 0;
 
 	if (radius <= 0)
 	{
@@ -24,11 +21,26 @@ Collection::Collection(int radius, int width, int height, int color)
 	}
 
 	circles = new Circle*[width*height];
-	for (; i < height; i++)
+
+	if (circles == NULL)
 	{
-		for (j = 0; j < width; j++)
+		cout << "Coudlnt locate enough memory for circles array" << endl;
+		exit(1);
+	}
+
+
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
 		{
 			circles[count] = new Circle(radius * 2 * j, radius * 2 * i, radius, color);
+			
+			if (circles[count] == NULL)
+			{
+				cout << "Coudlnt locate enough memory for circle" << endl;
+				exit(1);
+			}
+
 			count++;
 		}
 		
