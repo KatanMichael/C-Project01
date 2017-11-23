@@ -1,4 +1,4 @@
-#pragma once 
+
 #ifndef Collection_h
 #define Collection_h
 
