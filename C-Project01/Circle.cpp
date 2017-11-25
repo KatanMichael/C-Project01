@@ -1,9 +1,10 @@
 #include "stdafx.h"
-#include "Circle.h"
-#include <math.h>
+#include "Circle.h"  //in this #include "Point" #include <iostream>,using namespace std;
 
 
 
+
+//constructor
 Circle::Circle(int x, int y, int r, int color) : center(x,y)
 {
 	this->color = color;
@@ -22,6 +23,7 @@ Circle::Circle(int x, int y, int r, int color) : center(x,y)
 	this->radius = r;
 }
 
+//Getter And Setter
 int Circle::getColor() const
 {
 	return this->color;
@@ -32,39 +34,25 @@ void Circle::setColor(int color)
 	this->color = color;
 }
 
+//Chack if a curtian point is in the circle
 bool Circle::contains(const Point & p) const
 {
-	int x1, x2,x , y1, y2,y, d;
+	int a, b, R;
 
-	x1 = p.getX();
-	x2 = center.getX();
+	a = p.getX() - this->center.getX();
+	a = a*a;                                  //(x1-x2)^2
+	b = p.getY() - this->center.getY();
+	b = b*b;                                  //(y1-y2)^2
+	R = this->radius*this->radius;           // rudius^2
 
-	y1 = p.getY();
-	y2 = center.getY();
-
-	x = x1 - x2;
-	y = y1 - y2;
-
-	x = pow((double)x, 2.0);
-	y= pow((double)y, 2.0);
-
-	d = sqrt((double)x + (double)y);
-
-	if (d > radius)
-	{
+	if (R<(a + b))                            //if( (radius^2 )  <  (  (x1-x2)^2+(y1-y2)^2  ) ~- if( radiud^2 < d^2 )
 		return false;
-	}
 	else
-	{
 		return true;
-	}
-	
-
-
 }
 
 void Circle::print() const
 {
 	cout << "Circle center=(" << center.getX() << "," << center.getY() << ") radius=" << this->radius
-		<< " color=" << this->color << endl;
+		<< " color=" << this->color << endl; //Print using the example Templet
 }
