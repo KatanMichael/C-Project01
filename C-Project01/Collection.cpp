@@ -1,6 +1,5 @@
-#include "stdafx.h"
+
 #include "Collection.h"
-#include <cassert>
 
 
 //constructor
@@ -37,7 +36,7 @@ Collection::Collection(int radius, int width, int height, int color)
 		for (int j = 0; j < width; j++)
 		{
 			circles[count] = new Circle(radius * 2 * j, radius * 2 * i, radius, color);
-			
+
 			if (circles[count] == NULL)
 			{
 				cout << "Coudlnt locate enough memory for circle" << endl;
@@ -46,10 +45,10 @@ Collection::Collection(int radius, int width, int height, int color)
 
 			count++;
 		}
-		
+
 	}
 
-		
+
 }
 
 //Destractor
@@ -81,7 +80,7 @@ void Collection::print() const
 {
 	int i = 0;
 
-	for (; i < count ; i++)
+	for (; i < count; i++)
 	{
 		circles[i]->print();
 	}

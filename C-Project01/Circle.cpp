@@ -1,17 +1,17 @@
-#include "stdafx.h"
+
 #include "Circle.h"  //in this #include "Point" #include <iostream>,using namespace std;
 
 
 
 
 //constructor
-Circle::Circle(int x, int y, int r, int color) : center(x,y)
+Circle::Circle(int x, int y, int r, int color) : center(x, y)
 {
 	this->color = color;
 
 	if (r < 0)
 	{
-		cout << "Radios cant be negativ Or zero" << endl;
+		cout << "Radios cant be negativ Or zero, insert another number" << endl;
 
 		while (r <= 0)
 		{
